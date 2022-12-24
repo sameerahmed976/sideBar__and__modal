@@ -1,16 +1,21 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
+import { useGlobalContext } from "./Context";
 import { links, social } from "./data/data";
 
 const Sidebar = () => {
+  const { isSideBar, closeSideBar } = useGlobalContext();
+
   return (
     <>
-      <section className="sidebar">
+      <section
+        className={`${isSideBar ? "sidebar show__sidebar" : "sidebar"}  `}
+      >
         <section className="sidebar__header">
           <h1 className="logo">
             <a href="/">Learn New</a>
           </h1>
-          <span className="close">
+          <span className="close" onClick={closeSideBar}>
             <FaTimes />
           </span>
         </section>

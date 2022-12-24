@@ -12,7 +12,7 @@ const Context = ({ children }) => {
     setIsSideBar(false);
   };
 
-  const openModel = () => {
+  const openModal = () => {
     setIsModal(true);
   };
 
@@ -25,7 +25,7 @@ const Context = ({ children }) => {
       value={{
         isSideBar,
         isModal,
-        openModel,
+        openModal,
         closeModal,
         openSideBar,
         closeSideBar,

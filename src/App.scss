@@ -207,6 +207,15 @@ p {
   height: 100%;
   background-color: var(--tertiary-color);
   z-index: 100;
+  // width: 0;
+  overflow-x: hidden;
+  transition: var(--transition-8);
+  transform: translateX(-100%);
+}
+
+.show__sidebar {
+  transform: translateX(0);
+  // width: 100%;
 }
 
 .sidebar__header {
@@ -270,5 +279,67 @@ p {
 
   &:hover {
     color: rgb(255, 255, 255);
+  }
+}
+
+.social__links {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  & li a {
+    font-size: var(--font-size-h1);
+    color: var(--secondary-color);
+    transition: var(--transition-8);
+  }
+
+  & li a:hover {
+    color: white;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.452);
+  overflow-x: hidden;
+  transition: var(--transition-8);
+  transform: translateX(-100%);
+  &__content {
+    align-self: start;
+    margin-top: 12rem;
+    background-color: wheat;
+    padding: 3rem;
+    border-radius: 1rem;
+  }
+
+  &__text {
+    color: rgb(0, 0, 0);
+  }
+}
+
+.show__modal {
+  transform: translateX(0);
+  // width: 100%;
+}
+
+.close__modal {
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    width: 400px;
+    max-width: 100%;
   }
 }
